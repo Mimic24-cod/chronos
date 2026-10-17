@@ -1,0 +1,50 @@
+:root{--ink:#0e0a07;--umber:#2a1a10;--bark:#3d2817;--gold:#c9a24b;--gold2:#e6c97a;--parch:#eadcb8;--mute:#b9a77f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ink) radial-gradient(ellipse at top,#3a2515 0,var(--ink) 70%) fixed;color:var(--parch);font:18px/1.7 'EB Garamond',Georgia,serif}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.09;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:var(--gold2);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,.logo{font-family:'Cormorant Garamond',serif;font-weight:700;color:var(--gold2);line-height:1.15;margin:0 0 .5em}
+h1{font-size:clamp(2.4rem,6vw,4.6rem)}
+h2{font-size:clamp(1.8rem,3.5vw,2.5rem)}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:1rem;padding:.7rem 4vw;background:rgba(14,10,7,.92);backdrop-filter:blur(6px);border-bottom:1px solid var(--bark)}
+.logo{font-size:1.8rem;margin:0;letter-spacing:.08em}
+nav{display:flex;gap:1.2rem;flex:1;justify-content:flex-end;flex-wrap:wrap}
+nav a{color:var(--parch);padding:.2rem 0;border-bottom:2px solid transparent;transition:.25s}
+nav a:hover,nav a.on{border-color:var(--gold);text-decoration:none}
+button,.btn{font:inherit;cursor:pointer;background:linear-gradient(var(--gold2),var(--gold));color:var(--ink);border:0;padding:.55rem 1.3rem;border-radius:2px;font-weight:500;transition:transform .2s,box-shadow .2s;display:inline-block}
+button:hover,.btn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(201,162,75,.3);text-decoration:none}
+#lang{padding:.3rem .8rem}
+section,.wrap{padding:3.5rem 4vw;max-width:1200px;margin:auto}
+.hero{display:grid;grid-template-columns:1.2fr .8fr;gap:2rem;align-items:center;min-height:80vh}
+.hero p{max-width:34em;color:var(--mute);font-size:1.15rem}
+.hero svg{width:100%;max-height:70vh}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1.4rem}
+.card{background:linear-gradient(160deg,var(--umber),#1a110a);border:1px solid var(--bark);overflow:hidden;color:var(--parch);display:block;transition:.3s}
+.card:hover{border-color:var(--gold);transform:translateY(-4px);text-decoration:none}
+.card .b{padding:1rem}
+.card h3{font-size:1.35rem;margin:0}
+.card small,.meta{color:var(--mute)}
+.ph{aspect-ratio:4/5;width:100%;object-fit:cover;object-position:top;background:var(--bark);display:block;filter:sepia(.35)}
+.fb{aspect-ratio:4/5;display:grid;place-items:center;font:700 4rem 'Cormorant Garamond';color:var(--gold);background:radial-gradient(var(--bark),var(--ink))}
+.tools{display:flex;flex-wrap:wrap;gap:.7rem;margin:1rem 0 2rem}
+input,select{font:inherit;background:var(--ink);color:var(--parch);border:1px solid var(--bark);padding:.55rem .8rem;border-radius:2px;min-width:0}
+input{flex:1 1 240px}
+.tag{display:inline-block;border:1px solid var(--gold);color:var(--gold2);padding:0 .6rem;font-size:.85rem;margin:0 .4rem .4rem 0}
+.person{display:grid;grid-template-columns:300px 1fr;gap:2.5rem;align-items:start}
+.person .ph,.person .fb{border:1px solid var(--gold);padding:6px;background-clip:content-box}
+ul.tl{list-style:none;padding:0;border-left:2px solid var(--gold);margin-left:.5rem}
+ul.tl li{padding:0 0 1rem 1.4rem;position:relative}
+ul.tl li::before{content:"";position:absolute;left:-7px;top:.6em;width:12px;height:12px;background:var(--gold);transform:rotate(45deg)}
+.note{border-left:3px solid #a8442f;padding:.4rem 1rem;background:rgba(168,68,47,.12);margin:1rem 0}
+.periods{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:2rem}
+.periods button{background:transparent;color:var(--parch);border:1px solid var(--bark)}
+.periods button.on{background:var(--gold);color:var(--ink)}
+.day{background:var(--umber);border:1px solid var(--gold);padding:1.5rem}
+footer{border-top:1px solid var(--bark);padding:2rem 4vw;color:var(--mute);text-align:center;font-size:.9rem}
+.fade{animation:in .5s ease both}
+@keyframes in{from{opacity:0;transform:translateY(10px)}}
+@media(max-width:800px){.hero,.person{grid-template-columns:1fr}.hero svg{max-height:40vh}.person .ph,.person .fb{max-width:280px}.top{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
